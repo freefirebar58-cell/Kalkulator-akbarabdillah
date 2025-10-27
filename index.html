@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kalkulator Akbar - Glass Sci</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Kalkulator Akbar</h1>
+      <p class="subtitle">Glassmorphism • Scientific • Mobile-first</p>
+    </header>
+
+    <main>
+      <form id="calcForm" method="post">
+        <div class="display">
+          <input type="text" name="expression" id="expression" value="{{ expression }}" placeholder="0" autocomplete="off">
+          <div class="result">{{ result if result is not none }}</div>
+          {% if info %}<div class="info">{{ info }}</div>{% endif %}
+        </div>
+
+        <div class="keys">
+          <!-- scientific row -->
+          <button type="button" class="btn fn" data-val="sin(">sin</button>
+          <button type="button" class="btn fn" data-val="cos(">cos</button>
+          <button type="button" class="btn fn" data-val="tan(">tan</button>
+          <button type="button" class="btn fn" data-val="log10(">log</button>
+
+          <button type="button" class="btn fn" data-val="log(">ln</button>
+          <button type="button" class="btn fn" data-val="sqrt(">√</button>
+          <button type="button" class="btn fn" data-val="pow(">^</button>
+          <button type="button" class="btn op" data-val="/">÷</button>
+
+          <button type="button" class="btn num" data-val="7">7</button>
+          <button type="button" class="btn num" data-val="8">8</button>
+          <button type="button" class="btn num" data-val="9">9</button>
+          <button type="button" class="btn op" data-val="*">×</button>
+
+          <button type="button" class="btn num" data-val="4">4</button>
+          <button type="button" class="btn num" data-val="5">5</button>
+          <button type="button" class="btn num" data-val="6">6</button>
+          <button type="button" class="btn op" data-val="-">−</button>
+
+          <button type="button" class="btn num" data-val="1">1</button>
+          <button type="button" class="btn num" data-val="2">2</button>
+          <button type="button" class="btn num" data-val="3">3</button>
+          <button type="button" class="btn op" data-val="+">+</button>
+
+          <button type="button" class="btn wide" id="btn0" data-val="0">0</button>
+          <button type="button" class="btn num" data-val=".">.</button>
+          <button type="button" class="btn action" id="btnClear">C</button>
+          <button type="submit" class="btn submit">=</button>
+
+          <!-- extra -->
+          <button type="button" class="btn small" id="btnPi" data-val="π">π</button>
+          <button type="button" class="btn small" id="btnE" data-val="e">e</button>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <small>Built with Flask • Ready for Render</small>
+    </footer>
+
+    <script src="/static/script.js"></script>
+  </div>
+</body>
+</html>
